@@ -1,15 +1,27 @@
 #!/usr/bin/env python3
 
 # Fibonacci Sequence Exercise
-# TODO: (Read detailed instructions in the Readme file)
-# Prompt the user for the number of terms.
-while(true)
+
+# Function to calculate the Fibonacci number
+def fibonacci(depth):
+    if depth == 0:
+        return 0
+    if depth == 1:
+        return 1
+    else:
+        return fibonacci(depth - 1) + fibonacci(depth - 2)
+
+# Loop until the user inputs a valid, positive integer
+while(True):
   depth = input("Enter your desired depth: ")
-  if depth.lstrip('-').isdigit() and depth > 0:
-    print("good")
+  if depth.lstrip('-').isdigit() and int(depth) >= 0:
+    depth = int(depth)
     break
   else:
     print("Invalid Input")
 
-# Validate that the input is a positive integer.
-# Use a for loop to print the Fibonacci sequence up to that many terms.
+# Actually print everything out
+counter = 0
+while(counter<=depth):
+  print(fibonacci(counter), end = " ")
+  counter = counter + 1
