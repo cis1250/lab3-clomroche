@@ -11,11 +11,5 @@ while(true)
   else:
     print("Invalid Input")
 
-
-def fibonacci (val1, val2, depth, currentDepth)
-  if currentDepth = depth:
-    return 0;
-  else:
-    return 
 # Validate that the input is a positive integer.
 # Use a for loop to print the Fibonacci sequence up to that many terms.
