@@ -14,7 +14,7 @@ def is_sentence(text):
     # Check if the text is not empty and is a string
     if not isinstance(text, str) or not text.strip():
         return False
-
+        
     # Check for starting with a capital letter
     if not text[0].isupper():
         return False
@@ -34,4 +34,21 @@ user_sentence = input("Enter a sentence: ")
 while (is_sentence(user_sentence) == False):
     print("This does not meet the criteria for a sentence.")
     user_input = input("Enter a sentence: ")
-    
+
+# Split the sentence into a clean list of lowercase words with no punctation
+words = user_sentence.strip('.').lower().split()
+# Create blank dictionary
+frequency = {}
+
+# Assign a value of zero to each unique word in the original sentence
+for word in words:
+    if word not in frequency:
+        frequency[word] = 0
+
+# For everytime a word appears in the original sentence, add a value to it
+for word in words:
+    frequency[word] = frequency[word]+1
+
+# Print out the dictionary
+print(frequency)
+
